@@ -1,0 +1,83 @@
+{
+  "method": "Python datetime/calendar and Decimal sum; same documented calendar and baseline specification; separate implementation, not independent meteorological validation.",
+  "cases": [
+    {
+      "file": "santa-marta.json",
+      "config": {
+        "year": 2024,
+        "startMonth": 6,
+        "endMonth": 9,
+        "direction": "higher",
+        "threshold": 20
+      },
+      "targetTotal": 662.4,
+      "baselineMean": 366.02933333333334,
+      "changePct": 80.96910265843903
+    },
+    {
+      "file": "santa-marta.json",
+      "config": {
+        "year": 2025,
+        "startMonth": 1,
+        "endMonth": 3,
+        "direction": "higher",
+        "threshold": 20
+      },
+      "targetTotal": 100.99,
+      "baselineMean": 10.784,
+      "changePct": 836.4799703264094
+    },
+    {
+      "file": "santa-marta.json",
+      "config": {
+        "year": 2024,
+        "startMonth": 1,
+        "endMonth": 12,
+        "direction": "higher",
+        "threshold": 20
+      },
+      "targetTotal": 1789.39,
+      "baselineMean": 779.0833333333334,
+      "changePct": 129.67889613862445
+    },
+    {
+      "file": "bogota.json",
+      "config": {
+        "year": 2024,
+        "startMonth": 6,
+        "endMonth": 9,
+        "direction": "higher",
+        "threshold": 20
+      },
+      "targetTotal": 522.31,
+      "baselineMean": 533.9526666666667,
+      "changePct": -2.180467931614413
+    },
+    {
+      "file": "bogota.json",
+      "config": {
+        "year": 2025,
+        "startMonth": 1,
+        "endMonth": 3,
+        "direction": "higher",
+        "threshold": 20
+      },
+      "targetTotal": 439.64,
+      "baselineMean": 278.676,
+      "changePct": 57.76026640256068
+    },
+    {
+      "file": "bogota.json",
+      "config": {
+        "year": 2024,
+        "startMonth": 1,
+        "endMonth": 12,
+        "direction": "higher",
+        "threshold": 20
+      },
+      "targetTotal": 1815.08,
+      "baselineMean": 1717.6533333333334,
+      "changePct": 5.672079736695026
+    }
+  ]
+}

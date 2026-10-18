@@ -1,0 +1,26 @@
+✔ A missing threshold must not become a zero-percent claim (2.7904ms)
+✔ Same matched calendars exclude leap day in target and baseline (11.0775ms)
+✔ Hand-calculated 50% increase has correct totals and both verdict directions (10.7ms)
+✔ Threshold equality is inclusive; larger threshold fails (11.4969ms)
+✔ One missing target day blocks total and verdict without zero-filling (10.2576ms)
+✔ One baseline gap blocks mean rather than dropping a year silently (9.8466ms)
+✔ Negative NASA fill value, strings, NaN and infinity are invalid records (34.4505ms)
+✔ Zero rainfall is valid, but a zero baseline cannot define percent change (9.2654ms)
+✔ Invalid date range, overlapping years, bad threshold and unit fail explicitly (28.683ms)
+✔ Reject different time basis or model before comparison (8.5984ms)
+✔ Percent is not calculated when missing target values fall outside visible total (10.4248ms)
+✔ Bundled real source bytes match both recorded SHA-256 fingerprints (16.7713ms)
+✔ Real NASA result agrees with independent saved Python calculation (43.5179ms)
+✔ Evidence packet reproduces successfully against pinned catalog (18.286ms)
+✔ Unmodified source with changed result is rejected even with recomputed packet hash (19.7155ms)
+✔ Altered daily source is rejected even if adversary recalculates every supplied hash (27.1626ms)
+✔ Any packet field change without rehashing fails integrity check (10.8442ms)
+✔ CSV retains missing field as empty instead of zero (7.7062ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 415.8791

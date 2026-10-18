@@ -1,0 +1,41 @@
+{
+  "schema": "raintrace-snapshot-catalog/1",
+  "places": [
+    {
+      "id": "santa-marta",
+      "name": "Santa Marta",
+      "region": "Magdalena, Colombia",
+      "latitude": 11.2408,
+      "longitude": -74.199,
+      "file": "santa-marta.json",
+      "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=PRECTOTCORR&community=AG&longitude=-74.199&latitude=11.2408&start=19910101&end=20251231&format=JSON&time-standard=LST",
+      "retrievedAt": "2026-10-18T03:36:41.493Z",
+      "sha256": "df2a7df7700346e69993b9d166a2d89f0627021b366b234ddd01b9f3459a9e53",
+      "bytes": 201838,
+      "days": 12784,
+      "source": "NASA POWER",
+      "dataset": [
+        "MERRA2"
+      ],
+      "timeStandard": "LST"
+    },
+    {
+      "id": "bogota",
+      "name": "Bogotá",
+      "region": "Distrito Capital, Colombia",
+      "latitude": 4.711,
+      "longitude": -74.0721,
+      "file": "bogota.json",
+      "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=PRECTOTCORR&community=AG&longitude=-74.0721&latitude=4.711&start=19910101&end=20251231&format=JSON&time-standard=LST",
+      "retrievedAt": "2026-10-18T03:36:42.387Z",
+      "sha256": "627146fe97c8fb5c15292c8ff221f10aeaaa5e07a6a1ddc6560a44def466f946",
+      "bytes": 205191,
+      "days": 12784,
+      "source": "NASA POWER",
+      "dataset": [
+        "MERRA2"
+      ],
+      "timeStandard": "LST"
+    }
+  ]
+}

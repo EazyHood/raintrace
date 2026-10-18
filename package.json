@@ -1,0 +1,15 @@
+{
+  "name": "raintrace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reproducible rainfall claims for Colombian community planning",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests.mjs",
+    "data": "node acquire-data.mjs",
+    "verify": "node verify.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "license": "MIT"
+}

@@ -1,0 +1,151 @@
+{
+  "createdAt": "2026-10-18T03:55:55.1075815Z",
+  "status": "local-tested-independent-review-passed",
+  "files": [
+    {
+      "name": ".gitignore",
+      "bytes": 78,
+      "sha256": "bb2402c1e16018f22a61941de4306813808718ccc69210e66f5cd6ee6c9aae9a"
+    },
+    {
+      "name": "acquire-data.mjs",
+      "bytes": 2362,
+      "sha256": "cf6ade7511ab56b98da0b773ab4658a129f9a69a7a2010fccc2cc84e2cb9a407"
+    },
+    {
+      "name": "app.mjs",
+      "bytes": 12066,
+      "sha256": "c6128205b52e3ee7472705448afe02593b818d17c04b924d0c7036d0d2039653"
+    },
+    {
+      "name": "bogota.json",
+      "bytes": 205191,
+      "sha256": "627146fe97c8fb5c15292c8ff221f10aeaaa5e07a6a1ddc6560a44def466f946"
+    },
+    {
+      "name": "brand.md",
+      "bytes": 860,
+      "sha256": "a0fb0fb852c8f6d66be6c6a5436543b012cd87904b8a14b3ce1b7501a812f759"
+    },
+    {
+      "name": "catalog.json",
+      "bytes": 1418,
+      "sha256": "c00e72bfe372627af9f62d6d57b3c9d7d295cd5c5d2fe38bc0cde3c3f5543986"
+    },
+    {
+      "name": "core.mjs",
+      "bytes": 8887,
+      "sha256": "3a493ed421d5a6a192fb078bb51190b5ddd4a559f4f1fd4c1db823afbfff3ded"
+    },
+    {
+      "name": "DEMO.md",
+      "bytes": 2164,
+      "sha256": "d161ca6b3742e471d10cc6ed55207f3daecd5b2c818a691cdbf52da0894da9de"
+    },
+    {
+      "name": "desktop-preview.png",
+      "bytes": 93492,
+      "sha256": "d2527b40a586a3cbf61dbf0823b88df5f96bf6ada7726486d7a40dbabbcfb6b9"
+    },
+    {
+      "name": "ELIGIBILITY.md",
+      "bytes": 2747,
+      "sha256": "3c67f1e36afa338a5200164debd22cbe51c81a03e030c6e890e2bf1496382a32"
+    },
+    {
+      "name": "example-evidence.json",
+      "bytes": 243941,
+      "sha256": "9b737eb9b20bae4c8d32fbd190a5cde32b3838385a1dfdade023aee0979f63d1"
+    },
+    {
+      "name": "example-tampered.json",
+      "bytes": 243937,
+      "sha256": "48dc51e5527987ec0ff549e5a54ee3d30dd450e6ad7ce36efbfbf5aae8c96b8d"
+    },
+    {
+      "name": "FUENTES.md",
+      "bytes": 3217,
+      "sha256": "2cb52b603b9c89065e655abec98fb590e15949ee246b810fa9751e6ddb93052b"
+    },
+    {
+      "name": "independent-reference.json",
+      "bytes": 2088,
+      "sha256": "b30cae2ab619dbab149d9e5040ec116037e9b9c0375d513c3a7e2c913b660deb"
+    },
+    {
+      "name": "independent-reference.py",
+      "bytes": 1639,
+      "sha256": "e1199e2193ef074719d4ea2a069313df35ed2d20c58009f8bebaf3c7fdcb3590"
+    },
+    {
+      "name": "index.html",
+      "bytes": 9265,
+      "sha256": "4ee7b07694ba54016953858171e42477dfc74f20f75187df9f38d360dff38e14"
+    },
+    {
+      "name": "LEEME.md",
+      "bytes": 357,
+      "sha256": "17779dc83667f1a614e242e51d80b735624950ce641201e158af3e2d59d94ae8"
+    },
+    {
+      "name": "LICENSE",
+      "bytes": 1220,
+      "sha256": "8e7e7b71343a65a23325ddccd3a61f2b886cfac502a52cb8659aa0ea75d0f782"
+    },
+    {
+      "name": "mobile-preview.png",
+      "bytes": 216194,
+      "sha256": "26f3c7cc086736053522445ea0b6e2ede028ba9d38cfebf8251bf2c6d9782c8b"
+    },
+    {
+      "name": "package.json",
+      "bytes": 380,
+      "sha256": "734c8e9ed5d79e913c4b3c9d7a91b8392992ce2a73cd529a846518871d5a78e6"
+    },
+    {
+      "name": "QA.md",
+      "bytes": 3371,
+      "sha256": "dc90c97aac303b8c63e5c8a45afc2f496e45d9801acf93d988913061c1246ea0"
+    },
+    {
+      "name": "README.md",
+      "bytes": 6867,
+      "sha256": "49da83f062d90407a5d070ef27ab21bbb590b443bd7e17cf8e5267c26ce8ba22"
+    },
+    {
+      "name": "santa-marta.json",
+      "bytes": 201838,
+      "sha256": "df2a7df7700346e69993b9d166a2d89f0627021b366b234ddd01b9f3459a9e53"
+    },
+    {
+      "name": "server.mjs",
+      "bytes": 1346,
+      "sha256": "268a37fae51497c7a738c1fc4af3d33e857f0036901c3164cda8e1cb58cd595d"
+    },
+    {
+      "name": "style.css",
+      "bytes": 11593,
+      "sha256": "3de34885d2da8254ea4330b8fa558b245845fe6f705ec550f0a5f3daae481fb9"
+    },
+    {
+      "name": "SUBMISSION.md",
+      "bytes": 4195,
+      "sha256": "e599f436ba0042e7893175ed76aabfa246983ff3d426439c752d97932c29460f"
+    },
+    {
+      "name": "test-results.txt",
+      "bytes": 1642,
+      "sha256": "9927f33f93fabf5f8f954b50395c879f57ed9a5849a9687f8faebda0f4739a91"
+    },
+    {
+      "name": "tests.mjs",
+      "bytes": 7194,
+      "sha256": "d01da33dbc4b8eb81c2bc435ca078c96345da7111a7df6a9ff0c62aa99deead1"
+    },
+    {
+      "name": "verify.mjs",
+      "bytes": 777,
+      "sha256": "c9b28b9e4442f9d3f23ad6a1de9ebdc250587e29d91413d6cce9dc44d4e563e2"
+    }
+  ]
+}

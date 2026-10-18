@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.env
+.env.*
+*.mp4
+*.wav
+*.mp3
+mobile-preview.png
+qa-*.png

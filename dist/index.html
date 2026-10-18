@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check a rainfall claim for Colombia, inspect its source and export a reproducible evidence packet.">
+  <meta name="color-scheme" content="light"><title>Raintrace — rainfall, with a paper trail</title>
+  <link rel="stylesheet" href="style.css"><script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#report">Skip to rainfall report</a>
+  <header class="masthead"><a class="wordmark" href="./" aria-label="Raintrace home"><svg viewBox="0 0 32 36" aria-hidden="true"><path d="M16 2C13 9 3 16 3 23a13 13 0 0 0 26 0C29 16 19 9 16 2Z" fill="currentColor"/><path d="M8 24h16M10 18h12M12 30h8" stroke="#f5f3ed" stroke-width="2"/></svg>raintrace<span>Colombia rainfall evidence</span></a><nav aria-label="Resources"><a href="#method">How it works</a><a href="#verify">Verify a packet</a><a href="README.md">Project notes ↗</a></nav></header>
+  <div class="workspace">
+    <aside class="query">
+      <h1>Check a rainfall claim.</h1>
+      <p>Make the comparison explicit before a number becomes a decision.</p>
+      <form id="query-form">
+        <label for="place">Location</label><select id="place" name="place"><option value="santa-marta">Santa Marta · Magdalena</option><option value="bogota">Bogotá · Distrito Capital</option></select>
+        <div id="coordinate" class="small">Loading source coordinates…</div>
+        <label for="year">Target year</label><select id="year" name="year"><option>2025</option><option selected>2024</option><option>2023</option><option>2022</option><option>2021</option></select>
+        <div class="two-fields"><div><label for="start-month">From</label><select id="start-month" name="startMonth"></select></div><div><label for="end-month">Through</label><select id="end-month" name="endMonth"></select></div></div>
+        <fieldset><legend>Claim to check</legend><div class="claim-input"><span>At least</span><input id="threshold" name="threshold" type="number" required min="0" max="100" step="1" value="20" aria-label="Percentage difference"><span>%</span><select id="direction" name="direction" aria-label="Direction"><option value="higher">higher</option><option value="lower">lower</option></select></div><p class="small">than the 1991–2020 mean for the same months.</p></fieldset>
+        <button type="submit" class="primary" id="review">Review claim <span aria-hidden="true">→</span></button>
+        <p class="form-error" id="form-error" role="alert"></p>
+      </form>
+      <section class="source-note"><h2>One source. A clear boundary.</h2><p>NASA POWER · MERRA-2<br>Corrected precipitation · mm/day<br>Local Solar Time (LST)</p><p>This is a dated model-data snapshot, not live rain, a local gauge or an emergency alert.</p><a href="FUENTES.md">Sources & reuse notes ↗</a></section>
+      <details class="quality-demo"><summary>Try the missing-data safeguard</summary><p>Remove one target day from a temporary copy. The original snapshot stays unchanged. Export is blocked in this demonstration.</p><button id="gap-test" type="button">Remove one day</button><button id="gap-reset" type="button" hidden>Restore original data</button></details>
+    </aside>
+    <main id="report" tabindex="-1">
+      <div id="loading" role="status">Loading and checking the bundled NASA snapshot…</div>
+      <div id="load-error" role="alert" hidden><h2>Could not open the source snapshot</h2><p id="load-error-detail"></p><button id="retry" type="button">Try again</button></div>
+      <article id="report-content" hidden>
+        <div class="report-top"><div><p class="eyebrow">Rainfall comparison</p><h2 id="report-title"></h2><p id="report-location" class="small"></p></div><div class="report-actions"><button id="print-report" type="button" title="Print report or save as PDF">Print brief</button><button id="download" type="button" class="primary">Export evidence ↓</button></div></div>
+        <div class="demonstration" id="gap-banner" hidden>Quality-control demonstration: one daily value has been removed from a temporary copy. These are modified data, not the original NASA snapshot.</div>
+        <section class="finding" aria-labelledby="finding-title"><div><span class="finding-mark" id="finding-mark" aria-hidden="true">✓</span><h3 id="finding-title"></h3></div><p id="claim"></p><p id="explanation"></p></section>
+        <div class="metrics"><section><h3>Selected period</h3><div><strong id="actual">—</strong><span>mm</span></div><p id="target-coverage"></p></section><section><h3>Same-season baseline</h3><div><strong id="baseline">—</strong><span>mm</span></div><p id="baseline-coverage"></p></section><section><h3>Difference from mean</h3><div><strong id="difference">—</strong><span>%</span></div><p id="difference-note">A comparison, not a forecast</p></section></div>
+        <section class="chart-section"><div class="section-heading"><div><h3>A year in context</h3><p>Monthly precipitation. Highlighted months form your comparison.</p></div><div class="legend"><span><i class="actual-key"></i>Target</span><span><i class="baseline-key"></i>Baseline mean</span></div></div><div id="chart" role="img" aria-label="Monthly precipitation comparison"></div><details class="chart-data"><summary>Read the monthly values as a table</summary><table><thead><tr><th scope="col">Month</th><th scope="col">Target (mm)</th><th scope="col">Baseline mean (mm)</th><th scope="col">Included</th></tr></thead><tbody id="monthly-table"></tbody></table></details></section>
+        <div class="report-bottom"><section class="history"><h3>How variable is the baseline?</h3><p>Every dot is one same-season total from 1991–2020.</p><div id="history-plot" role="img"></div><p id="history-text" class="small"></p></section><section class="next-step"><h3>Before using this in a plan</h3><p id="planning-note"></p><p>The grid covers roughly 50 × 60 km. Coastal terrain and mountain rainfall can differ sharply within it. Check local gauges and water-system records before operational decisions.</p></section></div>
+        <section class="provenance" aria-labelledby="provenance-title"><div class="section-heading"><h3 id="provenance-title">Follow the evidence</h3><span id="integrity-status">Checking source bytes</span></div><ol><li><strong>Source snapshot</strong><p id="retrieval"></p><a id="source-link" target="_blank" rel="noopener noreferrer">Open exact NASA request ↗</a></li><li><strong>Matched comparison</strong><p>30 complete baseline seasons. Same calendar months. No missing-day imputation. February 29 excluded in every year.</p><a href="#method">Calculation & limitations ↓</a></li><li><strong>Portable evidence</strong><p>Export source bytes, settings and results. Anyone can reproduce the calculation using this release.</p><button type="button" id="csv" class="text-button">Download selected daily values ↓</button></li></ol><details><summary>Snapshot fingerprint</summary><code id="source-hash"></code><p class="small">SHA-256 detects changes against this release’s pinned copy. It is not a NASA signature, a blockchain record or a guarantee of meteorological accuracy.</p></details></section>
+      </article>
+      <section id="verify" class="verify"><div><h2>Verify a shared packet</h2><p>Check its bytes and recalculate its result. Your file stays in this browser.</p></div><label class="file-button" for="packet-file">Choose evidence JSON<input type="file" id="packet-file" accept=".json,application/json"></label><div id="verify-result" class="verify-result" role="status">No packet selected.</div><button id="verify-current" type="button">Verify the current report</button></section>
+      <section id="method" class="method"><h2>What the number means</h2><div><section><h3>Reproducible, not predictive</h3><p>Sum daily corrected precipitation over your selected months. Compare that sum with the arithmetic mean of the same months in 30 baseline years, 1991–2020. All comparisons omit February 29 to use equal calendars. The displayed difference is (target − baseline mean) ÷ baseline mean × 100.</p></section><section><h3>Missing means insufficient</h3><p>A missing, negative or nonnumeric daily value blocks its season. The claim receives no verdict unless every target day and all 30 baseline seasons are complete. A zero baseline also blocks percentage comparison. No rain is never inferred from a missing record.</p></section><section><h3>Keep the conclusion narrow</h3><p>This is one source and a coarse grid, not station validation. The baseline range describes past variation; it is not a confidence interval. A rainfall difference alone does not prove drought, flooding, changing climate or the cause of water shortages.</p></section></div></section>
+      <footer>Open educational prototype · No account, wallet or paid API · <a href="https://power.larc.nasa.gov/" target="_blank" rel="noopener noreferrer">Data provided by NASA POWER</a><br>Created for the IEEE ClimateChain environmental-monitoring track. No affiliation or endorsement claimed.</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body></html>
