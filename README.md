@@ -4,7 +4,15 @@
 
 Raintrace helps community planners and student environmental researchers in Colombia check a narrowly stated rainfall comparison before citing it in a report. Choose Santa Marta or Bogotá, a year and a season; test a percentage claim against the same months in 1991–2020. Export the original source bytes, calculation settings and reproducible result together.
 
-This is a new educational prototype built on 17 October 2026 (Colombia time) for the **Climate Data & Environmental Monitoring** track of the IEEE ClimateChain Global Hackathon. It is not yet a deployed service or a submitted entry.
+This is an educational prototype built on 17 October 2026 (Colombia time) for the **Climate Data & Environmental Monitoring** track of the IEEE ClimateChain Global Hackathon.
+
+## Public demo, source and walkthrough
+
+- [Open the working demo](https://eazyhood.github.io/raintrace/)
+- [Browse the source repository](https://github.com/EazyHood/raintrace)
+- [Watch the 4:42 narrated walkthrough](https://youtu.be/zv_WXPe3DCk)
+
+The walkthrough uses a real local recording of the application, with synthetic narration and subtitles. It shows the current-report verification button; the later check of downloading and re-importing an evidence file is documented below. No account, wallet or paid API is needed to try the app.
 
 ![Raintrace desktop preview](desktop-preview.png)
 
@@ -56,11 +64,13 @@ Imported files stay in the browser, capped at 2 MB. They are parsed as JSON, nev
 
 `tests.mjs` covers arithmetic, leap calendars, threshold boundaries, missing records, invalid units/time standards, zero baseline, source fingerprints, packet tampering and CSV missing-value preservation. `independent-reference.py` computes six real-data reference cases separately using Python `Decimal` and calendar arithmetic. Its saved result is checked by the Node suite. This is an arithmetic cross-check, not independent validation of NASA data or evidence of usability with real planners.
 
-Browser QA, exact results and limitations are recorded in [QA.md](QA.md). Deployment, public repository and the required real 3–5 minute demo remain parent-workflow tasks.
+Initial browser QA, exact results and limitations are recorded in [QA.md](QA.md). On 21 October 2026, the public demo's runtime files and both data snapshots were checked against commit `4493f407190a5a2e16767d06a7b80030f2b96ec2`; all matched the committed bytes. An evidence JSON exported from the public app was also selected from the actual download and re-imported through **Verify a shared packet**. The app reproduced the Santa Marta Jun–Sep 2024 result and reported matching source and recalculated result.
+
+The published walkthrough preserves the original local recording timeline. Its narration was checked with local automatic speech recognition and its subtitles against the script; no human listening review is claimed. These checks establish neither scientific validation of the model data nor usability with real planners.
 
 ## Files
 
-`core.mjs` is the shared calculation and integrity engine. `app.mjs` and CSS build the browser interface. `verify.mjs` verifies packets outside the UI. `acquire-data.mjs` documents the bounded acquisition. `SUBMISSION.md` contains accurate submission copy. `DEMO.md` is a recording plan, **not a completed video**.
+`core.mjs` is the shared calculation and integrity engine. `app.mjs` and CSS build the browser interface. `verify.mjs` verifies packets outside the UI. `acquire-data.mjs` documents the bounded acquisition. `SUBMISSION.md` contains accurate submission copy. `DEMO.md` preserves the recording plan; the completed walkthrough is linked above.
 
 ## Authorship and license
 
